@@ -14,10 +14,22 @@ function scrollFunction() {
         mybutton.style.display = "none";
     }
 }
+let act2 = document.getElementById("tact2");
+let act1 = document.getElementById("tact1");
+var flag = 0;
 
 function toscroll(x, y) {
-    let act = document.getElementById("tact2");
-    act.classList.add("active");
+
+    act2.classList.add("active");
+    act2.classList.remove("btn-secondary");
+    act2.classList.add("btn-primary");
+    act1.classList.remove("btn-primary");
+    act1.classList.add("btn-secondary");
+
+    if (act1.classList.contains("active")) {
+        act1.classList.remove("active");
+    }
+
     window.scrollBy(x, y);
 }
 
@@ -27,11 +39,20 @@ function backToTop() {
 }
 
 function toactivate() {
-    let act = document.getElementById("tact1");
-    act.classList.add("active");
+    if (act1.classList.contains("active") == false) {
+        act1.classList.remove("btn-secondary");
+        act1.classList.add("btn-primary");
+        act2.classList.remove("active");
+        act2.classList.remove("btn-primary");
+        act2.classList.add("btn-secondary");
+
+        act1.classList.add("active");
+    }
+
+
 
 }
 
 let variable = document.getElementById("tact1");
-variable.addEventListener("click", toactivate)
+variable.addEventListener("click", toactivate);
 mybutton.addEventListener("click", backToTop);
