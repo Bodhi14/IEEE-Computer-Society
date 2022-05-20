@@ -5,10 +5,12 @@
     display: none;
 }
 
-.tr:hover {
-    transform: scale(1.1);
+card-img-top {
+    height: 10vw;
+    width: 100%;
+    object-fit: cover;
 }
 
-.btn.active {
-    background-color: gray;
+.tr:hover {
+    transform: scale(1.1);
 }
