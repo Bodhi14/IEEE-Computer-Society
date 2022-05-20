@@ -36,15 +36,7 @@ if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
 
 function toscroll(x, y) {
 
-    act2.classList.add("active");
-    act2.classList.remove("btn-secondary");
-    act2.classList.add("btn-primary");
-    act1.classList.remove("btn-primary");
-    act1.classList.add("btn-secondary");
 
-    if (act1.classList.contains("active")) {
-        act1.classList.remove("active");
-    }
 
     window.scrollBy(x, y);
 }
@@ -52,34 +44,12 @@ function toscroll(x, y) {
 function backToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    if (act1.classList.contains("active") == false) {
-        act1.classList.remove("btn-secondary");
-        act1.classList.add("btn-primary");
-        act2.classList.remove("active");
-        act2.classList.remove("btn-primary");
-        act2.classList.add("btn-secondary");
-
-        act1.classList.add("active");
-    }
-
-
-}
-
-function toactivate() {
-    if (act1.classList.contains("active") == false) {
-        act1.classList.remove("btn-secondary");
-        act1.classList.add("btn-primary");
-        act2.classList.remove("active");
-        act2.classList.remove("btn-primary");
-        act2.classList.add("btn-secondary");
-
-        act1.classList.add("active");
-    }
 
 
 
 }
 
-let variable = document.getElementById("tact1");
-variable.addEventListener("click", toactivate);
+
+
+
 mybutton.addEventListener("click", backToTop);
